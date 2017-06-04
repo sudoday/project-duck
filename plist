@@ -7,7 +7,7 @@
         <key>ProgramArguments</key>
         <array>
             <string>/bin/sh</string>
-            <string>/Library/Logs/process.sh</string>
+            <string>/Users/psuser/Library/Logs/process.sh</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
