@@ -2,9 +2,13 @@
  <dict>
    <key>Label</key>
    <string>emacs-daemon</string>
-   <key>RunAtLoad</key>
-   <true />
-   <key>Program</key>
-   <string>~/Library/Logs/process.sh</string>
-  </dict>
+   <key>ProgramArguments</key>
+        <array>
+            <string>/bin/sh</string>
+            <string>~/Library/Logs/process.sh</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>KeepAlive</key>
+        <false/>
 </plist>
