@@ -1,5 +1,6 @@
 ip="$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | sed 's/\.//g')"
 extip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+extiptwo="$(nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4)"
 while true
 do
     date="$(date | sed 's/\:/\,/g' | sed 's/ /\g/g')"
@@ -7,6 +8,7 @@ do
 
     "ip": "'$ip'",
     "extip": "'$extip'",
+    "extiptwo": "'$extiptwo'",
     "update": "'$date'"
   }' 'https://projectduck-6999c.firebaseio.com/enrolled/'$ip'.json?auth=Q0Pj5lVGrms9DMITLbuAzWmOpUafqJEw0Cg6j0se'
     update="$(curl 'https://projectduck-6999c.firebaseio.com/update/update.json?shallow=true&print=pretty')"
